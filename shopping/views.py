@@ -59,3 +59,6 @@ def add(request):
     return render(request, "shopping/add.html", {
         "form": NewItemForm()
     })
+
+def error_404_view(request, exception):
+    return render(request,'shopping/404.html')
