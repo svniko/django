@@ -1,0 +1,12 @@
+{% extends "shopping/layout.html" %}
+
+{% block body %}
+    <h1>Add Item</h1>
+    <form action="{% url 'shopping:add' %}" method = "post"> 
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+    <a href="{% url 'shopping:index' %}">Items</a>
+
+{% endblock %}

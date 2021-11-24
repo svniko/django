@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'exams/styles.css' %}" >
+    <link rel='shortcut icon' href="{% static 'exams/favicon.ico' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it Exams</title>
+</head>
+<body>
+    <body>
+        <div></div>
+       
+            {% if exams %}
+                <h1>YES</h1>
+            {% else %}
+                <h1>NO</h1>
+            {% endif %}
+        </div>
+        {% comment %}
+        <h2>Because it is {{date}}</h2>
+        <h2>Because it is {{date.day}}.{{date.month}}.{{date.year}}</h2>
+        <h2>Because it is {{date|date:"d.m.Y"}}</h2>
+        <h2>Because it ist {{date|date:" d F Y"}}</h2>
+        <h2>Because it is {% now "jS F Y H:i" %}</h2>
+        {% endcomment %}
+        
+        <img src="data:image/png;base64,{{ data }}" alt="" height="250" ,width="250">
+        <img src="{% static 'exams/image.png' %}" alt="" height="250" ,width="250">
+              
+    </body>
+</body>
+</html>
