@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import datetime;
-
+# from django.conf import settings as django_settings
+# import os
 
 
 import matplotlib.pyplot as plt
@@ -38,7 +39,9 @@ def matplot_save(request):
     y = range(5)
     plt.plot(x,y)
     
-    
+   
     plt.savefig('exams/static/exams/image.png',dpi = 300)
-    
+    # os.path.join(SITE_ROOT, 'templates/')
+    # plt.savefig(os.path.join(django_settings.STATIC_ROOT, '/exams/image.png'), dpi=300) 
+
     return render(request,'exams/index.html')
